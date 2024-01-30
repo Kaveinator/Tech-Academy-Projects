@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/* Used by BasicHTML5.html */
+
+p {
+  color: #fff;
+  background-color: #000;
+  font-size: 12pt;
+  text-align: left;
+  text-shadow: #f00 0 0 5px;
+}
