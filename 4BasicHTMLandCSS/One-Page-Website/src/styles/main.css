@@ -79,14 +79,17 @@ content {
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
-  background-image: url("./../images/pexels-spacex-60130.jpg");
   background-position: center center;
   background-size: cover;
   display: block;
   position: relative;
 }
 
-content::before {
+content:nth-child(2) {
+  background-image: url("./../images/pexels-spacex-60130.jpg");
+}
+
+content:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -103,6 +106,10 @@ content::before {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+content:not(:nth-child(2)){
+  border-top: 3px solid rgba(255, 255, 255, 0.6);
 }
 
 content > div {
@@ -136,9 +143,92 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Media */
+#media .centerize {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
+.mediaTile {
+  position: relative;
+  width: 46.25%;
+  margin: 15px 2.5%;
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-right: 1.25%;
+}
+
+.mediaTile:nth-child(even) {
+  margin-left: 1.25%;
+}
+
+
+/* This is the aspect ratio force thingy */
+.mediaTile > img:nth-child(1) { 
+  width: 100%;
+  height: auto;
+  opacity: 0;
+}
+
+.mediaTile *:not(:nth-child(1)) {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #000;
+  color: #fff;
+  object-fit: cover;
+}
+
+.mediaTile .caption {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  height: auto;
+  padding: 5px;
+  bottom: 0;
+  opacity: 0;
+  transition: 100ms ease-in-out;
+}
+
+.mediaTile .caption:hover {
+  opacity: 1;
+}
+
+/* Contact Form */
+form > div {
+  width: calc(90% + 10px);
+  flex-direction: row !important;
+  margin-bottom: 5px;
+}
+
+form > div > input {
+  width: 47.5%;
+  margin: 0;
+}
+
+form > div > input:nth-child(2) {
+  margin-left: 2.5%;
+}
+
+form > textarea {
+  width: 90%;
+  resize: vertical;
+}
+
+input, textarea {
+  border: none;
+  background: #454545;
+  color: #fff;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #00baff;
+  border-radius: 5px;
+}
+
+/* Footer Stuff... so far only one rule */
 footer {
-  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
