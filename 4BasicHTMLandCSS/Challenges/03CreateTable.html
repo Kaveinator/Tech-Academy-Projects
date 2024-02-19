@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Challenge 3 Submission (Step 451)</title>
+    <style>
+      html, body {
+        height: 100%;
+        width: 100%;
+        /* 449 Req 1: Center Image */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* 450 Req 2a: Centered footer */
+        background-color: #131a26;
+        color: #cacaca;
+      }
+
+      img {
+        width: 50%;
+        height: auto;
+        box-shadow: rgba(0, 0, 0, 1) 0 0 15px 1px; 
+        filter: saturate(150%); /* 449 Req 2: Apply a filter onto the image */
+        border-radius: 8px; /* 449 Req 3: Add rounded corners */
+      }
+
+      table, .dot, img {
+        /* 451 Req 2a: Create table border */
+        border: 3px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        margin: 5px;
+      }
+
+      /* 451 Req 2c: Add background color to top row */
+      table thead { background-color: rgba(0, 0, 0, 0.2); }
+
+      /* 451 Req 2b: Add padding */
+      table th, table td { padding: 4px 8px; }
+
+      table th { border-bottom: 2px solid rgba(255, 255, 255, 0.2); }
+      table td:not(:nth-child(1)) { border-left: 2px solid rgba(255, 255, 255, 0.2); }
+
+      footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.2);
+        box-shadow: rgba(255, 255, 255, 0.2) 0px -3px;
+        padding: 8px 0;
+        font-weight: bold; /* 450 Req 2b: Bold footer */
+      }
+    </style>
+  </head>
+  <body>
+    <img src="https://kavemans.dev/src/sprites/RTX_Halloween.webp" />
+    <div class="dot"></div>
+    <table cellspacing="0"> <!-- 451 Req 1: Create table -->
+      <thead>
+        <th>Assignment</th>
+        <th>Status</th>
+        <th>Grade</th>
+      </thead>
+      <tr>
+        <td>449. First Challenge</td>
+        <td>Done</td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>450. Second Challenge</td>
+        <td>Done</td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>451. Third Challenge</td>
+        <td>Done</td>
+        <td>--</td>
+      </tr>
+    </table> 
+    <footer>&copy; 2024 Kaveman</footer><!-- 450 Req 1: Needs a footer -->
+  </body>
+</html>

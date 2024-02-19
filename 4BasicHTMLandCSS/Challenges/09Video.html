@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Challenge 9 Submission (Step 456)</title>
+    <style>
+      html, body, nav {
+        height: 100%;
+        width: 100%;
+        /* 449 Req 1: Center Image */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* 450 Req 2a: Centered footer */
+        text-align: center;
+        background-color: #131a26;
+        color: #cacaca;
+      }
+
+      nav {
+        /* 543 Req 2a: Assign a background color */
+        background-color: rgba(0, 0, 0, 0.2);
+        box-shadow: rgba(255, 255, 255, 0.2) 0px 3px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        flex-direction: row;
+        justify-content: end;
+        padding: 0 15px;
+        box-sizing: border-box;
+      }
+
+      nav > img {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+        position: absolute;
+        left: 15px;
+      }
+
+      nav a, p {
+        /* 543 Req 2b: Assign font color */
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0 15px;
+        transition: all 0ms, color 200ms;
+        text-decoration: none;
+      }
+
+      /* 543 Req 2c: Create :hover effect
+       * 455 Req 1: Create :hover for <p>
+       */
+      nav a:hover, p:hover {
+        color: rgba(255, 255, 255, 1);
+        text-decoration: none;
+      }
+
+      .media {
+        width: 50%;
+        height: auto;
+        filter: saturate(150%); /* 449 Req 2: Apply a filter onto the image */
+        border-radius: 0; /* 449 Req 3: Add rounded corners */
+        background-image: var(--background-image);
+        background-size: 120% auto;
+        background-position: center center;
+        overflow: hidden;
+        /* 456 Req 1: Create overlay fade (1/3) */
+        transition: background-size 200ms ease-in-out;
+        background-repeat: no-repeat;
+      }
+
+      .media > img {
+        width: 100%;
+        height: auto;
+        opacity: 0;
+      }
+
+      .media > .overlay, .media > .content {
+        position: absolute;
+        width: 100%;
+        transition: transform 200ms ease-in-out;
+        left: 0;
+        box-sizing: border-box;
+      }
+
+      .media > .overlay {
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 4px 8px;
+        box-shadow: rgba(255, 255, 255, 0.2) 0px -3px;
+        /* 456 Req 1: Create overlay fade (2/3) */
+        transform: translateY(calc(100% + 3px));
+      }
+
+      .media > .content {
+        top: 0;
+        height: 100%;
+        transform: scale(1.5);
+      }
+
+      /* 456 Req 1: Create overlay fade (3/3) */
+      .media:hover { background-size: 100% auto; }
+      .media:hover > .overlay { transform: translateY(0px); }
+      .media:hover > .content { transform: scale(1); }
+
+      .dot {
+        border: 3px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        margin: 5px 0;  
+      }
+
+      table, .twoColumns {
+        /* 451 Req 2a: Create table border */
+        box-shadow: rgba(255, 255, 255, 0.2) 0 0 0 3px;
+        border-radius: 8px;
+        margin: 5px;
+      }
+
+      /* 451 Req 2c: Add background color to top row */
+      table thead { background-color: rgba(0, 0, 0, 0.2); }
+
+      /* 451 Req 2b: Add padding */
+      table th, table td { padding: 4px 8px; }
+
+      table th { border-bottom: 2px solid rgba(255, 255, 255, 0.2); }
+      
+      table td:not(:nth-child(1)), .twoColumns > div:not(:first-child)
+      { border-left: 2px solid rgba(255, 255, 255, 0.2); }
+      
+      table th:first-child, table td:first-child { text-align: left; }
+
+      .twoColumns { width: 80%; overflow: hidden; }
+
+      .twoColumns > div {
+        /* 454 Req 4: Specify height/width for columns */
+        width: calc(50% - 1px);
+        margin: 0;
+        height: 100%;
+        /* 454 Req 3: Specifiy color for columns */
+        color: rgba(255, 255, 255, 0.8);
+        box-sizing: border-box;
+        float: left;
+      }
+      
+      footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.2);
+        box-shadow: rgba(255, 255, 255, 0.2) 0px -3px;
+        padding: 8px 0;
+        font-weight: bold; /* 450 Req 2b: Bold footer */
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img src="https://kavemans.dev/favicon.ico" />
+      <!-- 543 Req 1: Add Home, About and Contact Nav Buttons -->
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+    <!-- 454 Req 1: Create two-column layout -->
+    <div class="twoColumns">
+      <div class="media" style="--background-image: url('https://kavemans.dev/src/sprites/RTX_Halloween.webp');">
+        <img src="http://via.placeholder.com/16x9" />
+        <div class="overlay">Madness</div>
+      </div>
+      <div class="media">
+        <img src="http://via.placeholder.com/16x9" />
+        <!-- 457 Req 1 & 2: Video with autoplay/loop/muted attributes -->
+        <video class="content" autoplay loop muted>
+          <source src="./src/video/Challenge9Vid.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+    <!-- 452 Req 1: Text over image -->
+    
+    <div class="dot"></div>
+    <table cellspacing="0"> <!-- 451 Req 1: Create table -->
+      <thead>
+        <th>Assignment</th>
+        <th>Status</th>
+        <th>Grade</th>
+      </thead>
+      <tr>
+        <td>449. First Challenge</td>
+        <td>Done</td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>450. Second Challenge</td>
+        <td>Done</td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>451. Third Challenge</td>
+        <td>Done</td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>452. Fourth Challenge</td>
+        <td>Done</td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>453. Fifth Challenge</td>
+        <td>Done</td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>454. Sixth Challenge</td>
+        <td>Done</td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>455. Seventh Challenge</td>
+        <td>Done</td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>456. Eighth Challenge</td>
+        <td>Done</td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>457. Ninth Challenge</td>
+        <td>Done</td>
+        <td>--</td>
+      </tr>
+    </table>
+    <div class="dot"></div>
+    <p>Step: 457</p>
+    
+    <footer>&copy; 2024 Kaveman</footer><!-- 450 Req 1: Needs a footer -->
+  </body>
+</html>

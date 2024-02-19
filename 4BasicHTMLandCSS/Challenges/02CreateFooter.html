@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Challenge 2 Submission (Step 450)</title>
+    <style>
+      html, body {
+        height: 100%;
+        width: 100%;
+        /* 449 Req 1: Center Image */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* 450 Req 2a: Centered footer */
+        background-color: #131a26;
+        color: #cacaca;
+      }
+
+      img {
+        width: 50%;
+        height: auto;
+        box-shadow: rgba(0, 0, 0, 1) 0 0 15px 1px; 
+        filter: saturate(150%); /* 449 Req 2: Apply a filter onto the image */
+        border-radius: 8px; /* 449 Req 3: Add rounded corners */
+      }
+      
+      footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.2);
+        box-shadow: rgba(255, 255, 255, 0.2) 0px -3px;
+        padding: 8px 0;
+        font-weight: bold; /* 450 Req 2b: Bold footer */
+      }
+    </style>
+  </head>
+  <body>
+    <img src="https://kavemans.dev/src/sprites/RTX_Halloween.webp" />
+    <footer>&copy; 2024 Kaveman</footer><!-- 450 Req 1: Needs a footer -->
+  </body>
+</html>
