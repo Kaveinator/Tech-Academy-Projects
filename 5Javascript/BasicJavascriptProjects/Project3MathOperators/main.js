@@ -32,7 +32,7 @@ const ResultElem = document.getElementById("math"),
   },
   // Somewhere math.random is used
   secretOperation = (x = 1, y = 2, z = 10, w = 5) => {
-    let result = (x + y) * z / y - (Count + w);
+    let result = (x + y) * z / y - (Count + w + Math.random());
     ResultElem.innerText = `You'll never know = ${~result}`;
     return result;
   },
