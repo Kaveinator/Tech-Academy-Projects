@@ -1,7 +1,8 @@
-let Count = 0;
+let Count = 0; // Counter for number of clicks on button
+
 const add = (x, y) => {
-  let sum = x + y;
-  document.getElementById("result").innerText += sum;
-  return sum;
+  let sum = x + y; // Get sum
+  document.getElementById("result").innerText += sum; // Append onto UI
+  return sum; // Return sum
 }
 
