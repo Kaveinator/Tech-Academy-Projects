@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HelloWorld</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <p>Riders must be at least 52 cm tall to ride</p>
+    <input id="RideHeight" value="52" type="number" />
+    <button onClick="RideFunc()">Check</button>
+    <p id="RideResult">&nbsp;</p>
+    <hr />
+    <p>Must be 18+ to vote in US</p>
+    <input id="VoteAge" value="18" type="number" />
+    <button onClick="VoteFunc()">Check</button>
+    <p id="VoteResult">&nbsp;</p>
+    <hr />
+    <button onClick="Func()">Click me</button>
+    <p id="NewAndThis">&nbsp;</p>
+    <hr />
+    <p id="NestedFunction" onClick="Countdown(this, 23)">clickMe;</p>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
