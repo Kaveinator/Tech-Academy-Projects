@@ -39,7 +39,7 @@ const Countdown = (elem, i) => {
     console.log("Same thing");
   async function _NestedFunc() {
     while (true) {
-    await Delay(1000);
+      await Delay(1000);
       elem.innerText = --i;
       if (i == 0) return;
     }
