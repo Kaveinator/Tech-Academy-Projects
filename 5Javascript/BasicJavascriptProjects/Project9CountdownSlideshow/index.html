@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HelloWorld</title>
+    <meta charset="UTF-8" />
+    <link href="./style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body onload="Start();">
+    Step 168
+    <p>How many seconds would you like to set your alarm for></p>
+    <input id="Seconds" type="number" min="1" max="60" placeholder="Seconds" value="12"/>
+    <button id="TimerStartButton" onClick="OnTimerButtonPressed();">Start</button>
+    <p id="TimerStatus">&nbsp;</p>
+    <hr />
+    <!-- Slideshow Container -->
+    <div class="SlideshowContainer">
+      <div class="slide fade">
+        <div class="slideIndexText">1 / 3</div>
+        <img src="./imgs/img1.jpg" style="width:100%">
+        <div class="caption">Caption Text</div>
+      </div>
+      <div class="slide fade">
+        <div class="slideIndexText">2 / 3</div>
+        <img src="./imgs/img2.jpg" style="width:100%">
+        <div class="caption">Caption Two</div>
+      </div>
+      <div class="slide fade">
+        <div class="slideIndexText">3 / 3</div>
+        <img src="./imgs/img3.jpg" style="width:100%">
+        <div class="caption">Caption Three</div>
+      </div>
+
+      <!-- Next and previous buttons -->
+      <a class="prevBtn" onclick="ShiftIndex(-1)">&#10094;</a>
+      <a class="nextBtn" onclick="ShiftIndex(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align: center;">
+      <span class="dot" onclick="SetIndex(1)"></span>
+      <span class="dot" onclick="SetIndex(2)"></span>
+      <span class="dot" onclick="SetIndex(3)"></span>
+    </div>
+    <script defer src="./main.js"></script>
+  </body>
+</html>
