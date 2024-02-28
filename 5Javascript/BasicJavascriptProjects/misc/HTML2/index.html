@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HelloWorld</title>
+    <meta charset="UTF-8" />
+    <link href="./style.css" type="text/css" rel="stylesheet" />
+    <script defer src="./script.js"></script>  
+  </head>
+  <body>
+    <header>
+      <a href="#">Space Station</a>
+    </header>
+    <content id="contact" class="centerize">
+      <div>
+        <h3>
+          <i class="fa-solid fa-pencil"></i>
+          Contact Us
+        </h3>
+        <hr />
+        <p>
+          <form class="centerize" action="#" onSubmit="return ValidateForm(this)" method="post">
+            <div class="centerize">
+              <input name="name" type="text" placeholder="First Name" minlength="2" />
+              <input name="email" type="email" placeholder="Reply Email Address" />
+            </div>
+            <textarea rows="5" name="msg" placeholder="What's up?"></textarea>
+            <br />
+            <input type="submit" value="Submit" />
+          </form>  
+        </p>
+      </div>
+    </content>
+    <footer class="centerize">
+      <div>
+        &copy; MySpaceStation Inc. 2024
+        <br />
+        Icons from <a href="https://fontawesome.com/">Font Awesome</a>
+      </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/7d3a235ca6.js" crossorigin="anonymous"></script>
+  </body>
+</html>

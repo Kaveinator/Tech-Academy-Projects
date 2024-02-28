@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+@font-face {
+  /* Used font from my website */
+	font-family: 'Open Sans Light';
+	src: url('https://kavemans.dev/src/fonts/OpenSans/Light.eot');
+	src: local('Open Sans Light'),
+         url('https://kavemans.dev/src/fonts/OpenSans/Light.woff') format('woff'),
+         url('https://kavemans.dev/src/fonts/OpenSans/Light.ttf') format('truetype');
+}
+
+html, body {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans Light", sans-serif;
+  color: #fff;
+  background-color: #131a26;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+  z-index: 5;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+header > a {
+  font-size: 1.2em;
+  position: absolute;
+  top: 0;
+  left: 15px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  transition: 200ms ease-in-out;
+}
+
+header a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  transition: 200ms ease-in-out;
+}
+
+header a:hover {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+header > nav {
+  height: 100%;
+  display: block;
+  float: right;
+  flex-direction: row !important;
+  margin-right: 16px;
+}
+
+header > nav > a {
+  margin: 0 8px;
+}
+
+content {
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background-position: center center;
+  background-size: cover;
+  display: block;
+  position: relative;
+}
+
+content:nth-child(2) {
+  background-image: url("https://kavemans.dev/src/sprites/RTX_Halloween.webp");
+}
+
+content:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* Makes interlace lines onto the background graphic */
+  background: url("https://txrevive.net/src/sprites/interlace.webp");
+  box-shadow: inset 0 0 250px 0 rgb(0 0 0 / 75%);
+  pointer-events: none;
+}
+
+.centerize {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+content:not(:nth-child(2)){
+  border-top: 3px solid rgba(255, 255, 255, 0.6);
+}
+
+content > div {
+  text-shadow: #000 0 0 5px, #000 0 0 2.5px;
+  max-width: 90vw;
+  width: 630px;
+  background-color: #1f2d46;
+  z-index: 2;
+  border-radius: 16px;
+  box-shadow: inset 0 0 125px 0 rgb(0 0 0 / 75%);
+  text-align: left;
+  box-sizing: border-box;
+  padding: 0 16px 14px 16px;
+}
+
+content > div > h3 > i,
+a > i {
+  margin-right: 5px
+}
+
+content > div > hr {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+a {
+  color: #00baff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Form */
+form > div {
+  width: calc(90% + 10px);
+  flex-direction: row !important;
+  margin-bottom: 5px;
+}
+
+form > div > input {
+  width: 47.5%;
+  margin: 0;
+}
+
+form > div > input:nth-child(2) {
+  margin-left: 2.5%;
+}
+
+form > textarea {
+  width: 90%;
+  resize: vertical;
+}
+
+input, textarea {
+  border: none;
+  background: #454545;
+  color: #fff;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #00baff;
+  border-radius: 5px;
+}
+
+/* Footer Stuff... so far only one rule */
+footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top: 3px solid rgba(255, 255, 255, 0.6);
+}
