@@ -4,8 +4,9 @@
     <title>Definitely an offical NASA Site</title>
     <meta charset="UTF-8" />
     <link href="./src/styles/OnePageWebsite.css" type="text/css" rel="stylesheet" />
+    <script defer src="./src/scripts/lightbox.js"></script>
   </head>
-  <body>
+  <body onload="InitLightbox();">
     <!-- Annotations for Step 265 -->
     <header>
       <a href="#home">Space Station</a>
@@ -42,6 +43,11 @@
           Media
         </h3>
         <div class="centerize">
+          <div class="close lightboxOnly"></div>
+          <a class="prevBtn lightboxOnly" onclick="ShiftIndex(-1)">&#10094;</a>
+          <a class="nextBtn lightboxOnly" onclick="ShiftIndex(1)">&#10095;</a>
+          <div class="indexIndicators centerize lightboxOnly">
+          </div>
           <!-- Req B, D -->
           <div class="mediaTile">
             <img src="http://via.placeholder.com/16x9"> <!-- Why this? I use it to force a 16:9 aspect ratio-->
@@ -67,6 +73,11 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR63m0aXBzdOY8yLATBXNEitXBsCI2htYEV7Q&usqp=CAU" />
             <div class="centerize caption">Some caption</div>
           </div>
+          <div class="mediaTile">
+            <img src="http://via.placeholder.com/16x9"> <!-- Why this? I use it to force a 16:9 aspect ratio-->
+            <iframe title="NASA SLS Rocket Block 1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/c9e7b59b4f7145138825377673570e70/embed?ui_theme=dark"> </iframe>
+          </div>
+          
         </div>
         <hr />
         <a href="#">
