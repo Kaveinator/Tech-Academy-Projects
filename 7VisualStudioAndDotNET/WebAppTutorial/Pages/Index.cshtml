@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="body centerize">
+  <div id="ParallaxAnimation" class="centerize" style="--background-y-anchor: 50%;">
+    This background animates as you scroll
+  </div>
+  <div class="dynamicMargin">
+    <h1 id="HelloWorld" class="display-4 green-text">Hello World!</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h3>Video</h3>
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vQd1xc_RYPs?si=wsdufk7qypwViluR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <h3>Sample Text</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes. Eu non diam phasellus vestibulum. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Sagittis purus sit amet volutpat consequat mauris nunc congue nisi. Magna eget est lorem ipsum dolor sit amet consectetur. Ornare aenean euismod elementum nisi quis. Quam nulla porttitor massa id neque aliquam vestibulum morbi. At varius vel pharetra vel turpis. Et netus et malesuada fames ac turpis egestas maecenas. Tortor condimentum lacinia quis vel eros donec. Lorem donec massa sapien faucibus et molestie ac. Odio pellentesque diam volutpat commodo. Amet dictum sit amet justo donec enim diam vulputate ut. Quisque sagittis purus sit amet volutpat consequat mauris nunc congue. Proin sed libero enim sed. Mi ipsum faucibus vitae aliquet nec ullamcorper sit amet risus. Ultrices eros in cursus turpis massa tincidunt.</p>
+    <p>Amet mattis vulputate enim nulla aliquet porttitor lacus luctus. In est ante in nibh mauris. Ut porttitor leo a diam sollicitudin tempor id eu. Imperdiet sed euismod nisi porta lorem. Nulla porttitor massa id neque aliquam vestibulum morbi blandit cursus. Nisl purus in mollis nunc sed id semper risus. In eu mi bibendum neque egestas. Massa tincidunt dui ut ornare lectus sit amet. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Elit sed vulputate mi sit amet mauris commodo quis imperdiet. Diam in arcu cursus euismod quis viverra nibh cras pulvinar. Sapien et ligula ullamcorper malesuada. Velit dignissim sodales ut eu sem integer vitae justo. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Felis bibendum ut tristique et. Sit amet commodo nulla facilisi nullam. Mattis pellentesque id nibh tortor id aliquet. Libero justo laoreet sit amet. Volutpat ac tincidunt vitae semper.</p>
+  </div>
+</div>
+<script defer>
+  const ParallaxAnimationElem = document.getElementById("ParallaxAnimation");
+  function Start() {
+    requestAnimationFrame(ParallaxEffect);
+  }
+
+  function ParallaxEffect() {
+    requestAnimationFrame(ParallaxEffect);
+    Object3DTransform(ParallaxAnimationElem, 0, 0, -100, "calc(var(--background-y-anchor) - {0}");
+  }
+</script>
